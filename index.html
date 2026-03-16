@@ -423,22 +423,26 @@
 
     .section-header {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-bottom: 1.6rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      /* move content to right */
+      text-align: left;
+      /* align text right */
+      gap: 6px;
+      margin-bottom: 2rem;
     }
 
     .section-title {
-      font-size: 1.4rem;
-      font-weight: 500;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
     .section-sub {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      max-width: 420px;
+      white-space: nowrap;
+      /* forces single line */
     }
 
     /* GRID */
@@ -695,6 +699,71 @@
       margin-top: 0.6rem;
     }
 
+    #achievements {
+      margin-top: 4rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 150px;
+      padding: 22px;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .stat-card p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .testimonials {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+      flex: 1;
+      min-width: 220px;
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      line-height: 1.6;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .testimonial-card span {
+      display: block;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
     footer {
       margin-top: 2.5rem;
       padding-top: 1.5rem;
@@ -789,7 +858,7 @@
       margin-top: 1.1rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -803,7 +872,7 @@
     .social-icons {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 10px;
     }
 
     .social-icons a {
@@ -834,6 +903,24 @@
 
     .social-icons a:hover svg {
       color: #fff;
+    }
+
+    .resume-btn {
+      margin-left: auto;
+      /* pushes button to right */
+      padding: 6px 12px;
+      border: 1px solid black;
+      border-radius: 6px;
+      background: white;
+      color: black;
+      font-size: 13px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: black;
+      color: white;
     }
 
     /* Gradient Text */
@@ -1059,6 +1146,29 @@
         font-size: 1rem;
       }
     }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      background: #fff;
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 20px;
+    }
+
+    .resume-btn:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 
@@ -1157,7 +1267,7 @@
               </div>
 
               <div class="swiper-slide">
-                <img src="businesscard.jpg" alt="Design Showcase 2" />
+                <img src="img.jpg" alt="Design Showcase 2" />
               </div>
             </div>
 
@@ -1196,13 +1306,13 @@
         </div>
       </div>
       <div class="grid">
-        <article class="card" data-aos="fade-up">
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
           <div class="card-img">
-            <img src="Zappy logo.png" alt="Logo sample 1" />
+            <img src="urban leaf logo.png" alt="Logo sample 3" />
           </div>
-          <div class="card-title">ZAPPY</div>
+          <div class="card-title">Urban Leaf</div>
           <div class="card-meta">
-            <span class="chip">OTT Platform</span>
+            <span class="chip">Decore</span>
           </div>
         </article>
 
@@ -1475,7 +1585,7 @@
       <div class="container" data-aos="fade-up">
         <h2 class="section-title">Pricing & Packages</h2>
         <p class="section-sub">
-          Transparent and simple pricing for every design need.
+          Final pricing depends on project scope, complexity, revisions, and delivery timeline.
         </p>
 
         <div class="packages-grid">
@@ -1492,7 +1602,7 @@
               <li>Brand-ready Output</li>
             </ul>
             <button class="btn-outline" onclick="scrollToSection('contact')">
-              Get a Quote
+              Discuss Project
             </button>
           </div>
 
@@ -1509,7 +1619,7 @@
               <li>Social Media Optimized</li>
             </ul>
             <button class="btn-outline" onclick="scrollToSection('contact')">
-              Get a Quote
+              Discuss Project
             </button>
           </div>
 
@@ -1518,7 +1628,7 @@
           <div class="package-card glass" data-aos="zoom-in-up" data-aos-delay="300">
             <div class="card-accent"></div>
             <h3>Thumbnail Design</h3>
-            <p class="price">₹249 — ₹499</p>
+            <p class="price">₹399</p>
             <ul class="features">
               <li>2–3 Concepts</li>
               <li>2–3 Revisions</li>
@@ -1563,7 +1673,7 @@
           <div class="package-card glass featured" data-aos="zoom-in-up">
             <div class="card-accent"></div>
             <h3>Website Development</h3>
-            <p class="price">Starting from ₹2,999</p>
+            <p class="price">₹2,999</p>
             <ul class="features">
               <li>Custom UI Design</li>
               <li>Responsive Layout</li>
@@ -1574,14 +1684,61 @@
               Discuss Project
             </button>
           </div>
-
-          <p class="pricing-note">Final pricing depends on project scope, complexity, revisions, and delivery timeline.</p>
-
-
         </div>
       </div>
     </section>
 
+    <section id="achievements">
+
+      <div class="section-header">
+        <h2 class="section-title">Work & Client Feedback</h2>
+        <p class="section-sub">
+          A glimpse of my journey through completed projects and client experiences.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+
+        <div class="stat-card">
+          <h3 class="counter" data-target="25">0</h3>
+          <p>Projects Completed</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 class="counter" data-target="15">0</h3>
+          <p>Happy Clients</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 class="counter" data-target="3">0</h3>
+          <p>Years Learning</p>
+        </div>
+
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials">
+
+        <div class="testimonial-card">
+          <p>
+            “Yash created a clean and professional logo for our business.
+            The design perfectly matched our brand.”
+          </p>
+          <span>— Client</span>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            “Very creative designer. Delivered banners and posters exactly
+            as we imagined.”
+          </p>
+          <span>— Business Owner</span>
+        </div>
+
+      </div>
+
+    </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact">
@@ -1590,7 +1747,8 @@
           <h2 class="section-title">Contact &amp; Booking</h2>
           <p class="section-sub">
             Share your idea and I’ll turn it into clean visuals that match
-            your brand.Available for freelance projects, collaborations, and long-term
+            your brand.
+            <br>Available for freelance projects, collaborations, and long-term
             design support.
           </p>
         </div>
@@ -1651,9 +1809,14 @@
                   </svg>
                 </a>
               </div>
+              <!-- Resume Button -->
+              <a href="Yash_Baid_Resume.pdf" download class="resume-btn">
+                Download Resume
+              </a>
             </div>
             <!-- End social icons row -->
           </div>
+
         </div>
 
         <div data-aos="fade-left" data-aos-delay="80">
@@ -1824,6 +1987,26 @@
           }
         });
       });
+
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCounter();
+    });
   </script>
 </body>
 
